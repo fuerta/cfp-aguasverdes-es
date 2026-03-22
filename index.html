@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Aguas Verdes - My Fuerta Ltd.</title>
+    
+    <meta property="og:title" content="Aguas Verdes, Fuerteventura - Alojamientos Privados">
+    <meta property="og:description" content="Portal oficial de los alojamientos vacacionales gestionados por My Fuerta Ltd. en Fuerteventura.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1596751303335-7bb67c4b4a68?q=80&w=1200">
+    <meta property="og:url" content="https://aguasverdes.es">
+    
+    <style>
+        /* Modern CSS Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Essential typography and colors */
+        :root {
+            --primary-bg: #fdfdfd;
+            --text-main: #2d3436;
+            --text-secondary: #636e72;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --border-color: #dfe6e9;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background-color: var(--primary-bg);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- 1. Main Content Area (The beautiful photo) --- */
+        main {
+            flex: 1 0 auto; /* Ensures footer stays at the bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Responsive Background Image (Cloudflare optimized URL) */
+            background-image: url('https://images.unsplash.com/photo-1596751303335-7bb67c4b4a68?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            
+            /* Add a minimal filter for professionalism */
+            filter: saturate(1.1);
+        }
+        
+        /* Optional visual container, you can remove this later for text overlay */
+        .content-placeholder {
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+        
+        h1 {
+            font-weight: 700;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* --- 2. The Legal Footer --- */
+        footer {
+            flex-shrink: 0; /* Ensures footer doesn't get squashed */
+            background-color: #fff;
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .disclaimer-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        p.disclaimer-text {
+            font-size: 0.95rem; /* Large enough to be readable, small enough for respect */
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        p.company-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        /* Responsiveness for mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .content-placeholder { padding: 1.5rem; width: 90%; }
+            footer { padding: 1.5rem 1rem; }
+            p.disclaimer-text { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="content-placeholder">
+            <h1>Aguas Verdes</h1>
+            <p>Alojamientos gestionados por My Fuerta Ltd.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="disclaimer-container">
+            <p class="disclaimer-text">
+                Esta página web es propiedad de una empresa privada de gestión vacacional y no tiene ninguna afiliación oficial, legal o representativa con la Comunidad de Propietarios de la Urbanización Aguas Verdes.
+            </p>
+            <p class="company-text">
+                Operado por My Fuerta Ltd. | Fuerteventura, Canarias.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
