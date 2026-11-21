@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Aguas Verdes - My Fuerta Ltd.</title>
     <meta name="description" content="Portal oficial de los alojamientos vacacionales gestionados por My Fuerta Ltd. en Aguas Verdes, Fuerteventura.">
+    <link rel="canonical" href="https://aguasverdes.es/">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b5e7a'/%3E%3Cpath d='M8 40c8-6 16-6 24 0s16 6 24 0v14H8z' fill='%2374b9ff'/%3E%3Ccircle cx='46' cy='20' r='7' fill='%23ffeaa7'/%3E%3C/svg%3E">
 
     <meta property="og:type" content="website">
@@ -12,120 +13,9 @@
     <meta property="og:title" content="Aguas Verdes, Fuerteventura - Alojamientos Privados">
     <meta property="og:description" content="Portal oficial de los alojamientos vacacionales gestionados por My Fuerta Ltd. en Fuerteventura.">
     <meta property="og:image" content="https://aguasverdes.es/hero-bg.jpg">
-    <meta property="og:url" content="https://aguasverdes.es">
+    <meta property="og:url" content="https://aguasverdes.es/">
 
-    <style>
-        /* Modern CSS Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Essential typography and colors */
-        :root {
-            --primary-bg: #fdfdfd;
-            --text-main: #2d3436;
-            --text-secondary: #636e72;
-            --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --border-color: #dfe6e9;
-        }
-
-        body {
-            min-height: 100vh;
-            min-height: 100dvh;
-            font-family: var(--font-family);
-            color: var(--text-main);
-            background-color: var(--primary-bg);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* --- 1. Main Content Area (The beautiful photo) --- */
-        main {
-            flex: 1 0 auto; /* Ensures footer stays at the bottom */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem;
-
-            /* Responsive Background Image */
-            background-color: #1b5e7a;
-            background-image: url('./hero-bg.jpg');
-            background-size: cover;
-            background-position: center bottom;
-            background-repeat: no-repeat;
-
-            /* Add a minimal filter for professionalism */
-            filter: saturate(1.1);
-        }
-
-        /* Optional visual container, you can remove this later for text overlay */
-        .content-placeholder {
-            width: min(100%, 34rem);
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            text-align: center;
-        }
-
-        h1 {
-            font-weight: 700;
-            font-size: 2.2rem;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
-
-        p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-
-        /* --- 2. The Legal Footer --- */
-        footer {
-            flex-shrink: 0; /* Ensures footer doesn't get squashed */
-            background-color: #fff;
-            padding: 2.5rem 1.5rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .disclaimer-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        p.disclaimer-text {
-            font-size: 0.95rem; /* Large enough to be readable, small enough for respect */
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        p.company-text {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Responsiveness for mobile */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .content-placeholder { padding: 1.5rem; }
-            footer { padding: 1.5rem 1rem; }
-            p.disclaimer-text { font-size: 0.9rem; }
-        }
-
-        @media (max-height: 500px) {
-            main { padding: 1rem; }
-            .content-placeholder { padding: 1.5rem; }
-            footer { padding: 1.25rem 1rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -133,6 +23,49 @@
         <div class="content-placeholder">
             <h1>Aguas Verdes</h1>
             <p>Alojamientos gestionados por My Fuerta Ltd.</p>
+
+            <details class="explore-details">
+                <summary class="explore-trigger">
+                    <span>Explorar</span>
+                    <svg class="explore-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+
+                <nav class="explore-links" aria-label="Explorar Aguas Verdes">
+                    <a class="explore-link" href="./alojamientos/">
+                        <span>
+                            <span class="explore-link-title">Alojarse</span>
+                            <span class="explore-link-desc">Viviendas vacacionales en Aguas Verdes</span>
+                        </span>
+                        <span class="explore-link-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+
+                    <a class="explore-link" href="https://elpirataverde.net/" target="_blank" rel="noopener noreferrer">
+                        <span>
+                            <span class="explore-link-title">Comer</span>
+                            <span class="explore-link-desc">Restaurante El Pirata Verde</span>
+                        </span>
+                        <span class="explore-link-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+
+                    <a class="explore-link" href="https://piscinas.aguasverdes.es/" target="_blank" rel="noopener noreferrer">
+                        <span>
+                            <span class="explore-link-title">Piscinas</span>
+                            <span class="explore-link-desc">Piscinas naturales de Aguas Verdes</span>
+                        </span>
+                        <span class="explore-link-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+
+                    <a class="explore-link" href="https://urbanizacion.aguasverdes.es/" target="_blank" rel="noopener noreferrer">
+                        <span>
+                            <span class="explore-link-title">Urbanización</span>
+                            <span class="explore-link-desc">Información general de la urbanización</span>
+                        </span>
+                        <span class="explore-link-arrow" aria-hidden="true">&#8599;</span>
+                    </a>
+                </nav>
+            </details>
         </div>
     </main>
 

@@ -1,0 +1,286 @@
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Essential typography and colors */
+:root {
+    interpolate-size: allow-keywords;
+    --primary-bg: #fdfdfd;
+    --text-main: #2d3436;
+    --text-secondary: #636e72;
+    --accent: #1b5e7a;
+    --accent-hover: #144960;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --border-color: #dfe6e9;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: var(--font-family);
+    color: var(--text-main);
+    background-color: var(--primary-bg);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 1. Main Content Area --- */
+main {
+    flex: 1 0 auto; /* Ensures footer stays at the bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+
+    /* Responsive Background Image */
+    background-color: var(--accent);
+    background-image: url('./hero-bg.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    /* Add a minimal filter for professionalism */
+    filter: saturate(1.1);
+}
+
+.content-placeholder {
+    width: min(100%, 34rem);
+    padding: 2.75rem 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.content-placeholder--wide {
+    width: min(100%, 42rem);
+    text-align: left;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* --- Native <details> "Explorar" Hub --- */
+.explore-details {
+    margin-top: 1.5rem;
+}
+
+.explore-trigger {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.98rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.explore-trigger::-webkit-details-marker {
+    display: none;
+}
+
+.explore-trigger:hover {
+    background-color: var(--accent-hover);
+}
+
+.explore-trigger:active {
+    transform: scale(0.98);
+}
+
+.explore-trigger:focus-visible,
+.explore-link:focus-visible,
+.back-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.explore-chevron {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.25s ease;
+}
+
+.explore-details[open] .explore-chevron {
+    transform: rotate(180deg);
+}
+
+.explore-details::details-content {
+    block-size: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: block-size 0.28s ease, opacity 0.22s ease, content-visibility 0.28s allow-discrete;
+}
+
+.explore-details[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+}
+
+.explore-links {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 0.65rem;
+    text-align: left;
+}
+
+.explore-details[open] .explore-links {
+    animation: exploreFadeIn 0.22s ease;
+}
+
+@keyframes exploreFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.explore-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-main);
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.explore-link:hover {
+    border-color: var(--accent);
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+.explore-link-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--text-main);
+}
+
+.explore-link-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+.explore-link-arrow {
+    flex-shrink: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* --- Subpage Elements (/alojamientos/) --- */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.status-notice {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px dashed #b2bec3;
+}
+
+.status-notice h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.35rem;
+}
+
+.status-notice p {
+    font-size: 0.95rem;
+}
+
+/* --- 2. The Legal Footer --- */
+footer {
+    flex-shrink: 0; /* Ensures footer doesn't get squashed */
+    background-color: #fff;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.disclaimer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+p.disclaimer-text {
+    font-size: 0.95rem; /* Large enough to be readable, small enough for respect */
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+p.company-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Responsiveness for mobile */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .content-placeholder { padding: 1.5rem; }
+    footer { padding: 1.5rem 1rem; }
+    p.disclaimer-text { font-size: 0.9rem; }
+}
+
+@media (max-height: 500px) {
+    main { padding: 1rem; }
+    .content-placeholder { padding: 1.5rem; }
+    footer { padding: 1.25rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
